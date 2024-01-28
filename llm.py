@@ -43,18 +43,18 @@ def llm_generate_text(prompt, service, model):
 
 
 # Open AI Function
-openai.api_key = "sk-XXX"
-
-
+openai.api_key = "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"
 def openai_generate(user_prompt, selected_model):
-    completion = openai.chat.completions.create(
-        model=selected_model, messages=[{"role": "user", "content": user_prompt}]
+    completion = openai.ChatCompletion.create(
+        model=selected_model, 
+        messages=[{"role": "user", "content": user_prompt}
+        ]
     )
-    return completion.choices[0].message.content
+    return completion.choices[0].message['content']
 
 
 # nlpCloud Function
-nlp_cloud_key = "f17207e55bf7c65f8294e"
+nlp_cloud_key = "e0f606e6059ca70d6abcac15259977771427b5ad"
 
 
 def nlp_cloud_generate(user_prompt, selected_model):
@@ -78,7 +78,7 @@ def nlp_cloud_generate(user_prompt, selected_model):
 
 
 # Cohere API
-cohere_api_key = "fk8B74dEf1DusuFJoi"
+cohere_api_key = "A6Ya68o5rolhEKnSP1TRn0p1jQ1WMrNd0pdNgzVK"
 
 
 def cohere_generate(user_prompt, selected_model):
